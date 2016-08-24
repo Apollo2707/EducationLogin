@@ -8,5 +8,18 @@
         Title="MainWindow"
          Height="{Binding SystemParameters.PrimaryScreenHeight}" 
          Width="{Binding SystemParameters.PrimaryScreenWidth}">
-    <DockPanel ></DockPanel>
+
+    <Grid>
+        <DockPanel TextBlock.TextAlignment="Center">
+            <TextBlock>
+               Welcome to Lackland 
+            </TextBlock>
+        </DockPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+    </Grid>
 </Window>
