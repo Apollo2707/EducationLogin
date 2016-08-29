@@ -20,9 +20,22 @@ namespace EducationOffice
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public static RoutedCommand MyCommand = new RoutedCommand();
         public MainWindow()
         {
+            MyCommand.InputGestures.Add(new KeyGesture(Key.S, ModifierKeys.Control));
             InitializeComponent();
+
+
+
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            MessageBox.Show("it works");
         }
     }
+
+   
 }

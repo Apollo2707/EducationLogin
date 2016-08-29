@@ -8,18 +8,54 @@
         Title="MainWindow"
          Height="{Binding SystemParameters.PrimaryScreenHeight}" 
          Width="{Binding SystemParameters.PrimaryScreenWidth}">
+    <Window.Resources>
+            <RoutedUICommand x:Key="AltCommandS" />
+    </Window.Resources>
+    <Window.CommandBindings>
+            <CommandBinding Command="{StaticResource AltCommandS}" Executed="CommandBinding_Executed"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+            <KeyBinding Key="S" Modifiers="Alt" Command="{StaticResource AltCommandS}" />
+     </Window.InputBindings>
 
-    <Grid>
-        <DockPanel TextBlock.TextAlignment="Center">
-            <TextBlock>
-               Welcome to Lackland 
-            </TextBlock>
-        </DockPanel>
+
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="5*" />
+            <!-- ROW 0 -->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <!-- ROW 0 -->
         </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock FontSize="26" HorizontalAlignment="Center"  Text="Welcome to the JBSA Lackland Education Office"/>
+            <TextBlock FontSize="26" HorizontalAlignment="Center"  Text="Please fillout this form and take a seat outside"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" VerticalAlignment="Top" Margin="150,10,5,5">
+            <StackPanel  Orientation="Horizontal"  >
+                <ComboBox Name="cboAppt" FontSize="12" >
+                    <ComboBoxItem Content="Yes"/>
+                    <ComboBoxItem Content="No"/>
+                </ComboBox>
+                <TextBlock   Text=" Do you have a appointment?"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal"  >
+                <Label Content="First Name"/>
+                <TextBox Name="txtFirstName" Width="120"/>
+                <Label Content="Last Name"/>
+                <TextBox Name="txtLastName" Width="120"/>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal"  >
+                <TextBlock Text="Pay Grade"/>
+                <ComboBox Name="cboPayGrade" FontSize="12" >
+                    <ComboBoxItem Content="Yes"/>
+                    <ComboBoxItem Content="No"/>
+                </ComboBox>
+            </StackPanel>
+
+        </StackPanel>
+
     </Grid>
 </Window>
