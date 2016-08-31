@@ -75,7 +75,7 @@ namespace App2
             GL.LoadIdentity();
             GL.Ortho(-1.0f, 1.0f, -1.5f, 1.5f, -1.0f, 1.0f);
             GL.MatrixMode(All.Modelview);
-            GL.Rotate(3.0f, 0.0f, 0.0f, 1.0f);
+            GL.Rotate(6.0f, 0.0f, 0.0f, 1.0f);
 
             GL.ClearColor(0.5f, 0.5f, 0.5f, 1.0f);
             GL.Clear((uint)All.ColorBufferBit);
